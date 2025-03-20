@@ -2,12 +2,12 @@
 {
     internal class Program
     {
-        //Versão 2: Gerar um número secreto aleatório
+        //Versão 3: Verificar se o jogador acertou
         static void Main(string[] args)
         {
-            Console.WriteLine("--------------------------------------");
+            Console.WriteLine("--------------------------------------------------");
             Console.WriteLine("Jogo de Adivinhação");
-            Console.WriteLine("--------------------------------------");
+            Console.WriteLine("--------------------------------------------------");
 
             //Logica do jogo
             Random geradorDeNumeros = new Random();
@@ -17,8 +17,24 @@
             Console.Write("Digite um número (de 1 a 20) para chutar: ");
             int numeroDigitado = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Você digitou o nemero: " + numeroDigitado);
-            Console.WriteLine("O número secreto é: " + numeroSecreto);
+            if (numeroDigitado == numeroSecreto)
+            {
+                Console.WriteLine("--------------------------------------------------");
+                Console.WriteLine("Parabéns, você acertou!");
+                Console.WriteLine("--------------------------------------------------");
+            }
+            else if (numeroDigitado > numeroSecreto)
+            {
+                Console.WriteLine("--------------------------------------------------");
+                Console.WriteLine("O numero digitado foi maior que o nemro secreto!");
+                Console.WriteLine("--------------------------------------------------");
+            }
+            else
+            {
+                Console.WriteLine("--------------------------------------------------");
+                Console.WriteLine("O numero digitado foi menor que o nemro secreto!");
+                Console.WriteLine("--------------------------------------------------");
+            }
 
             Console.ReadLine();
         }
