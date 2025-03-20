@@ -1,9 +1,8 @@
-﻿
-namespace JogoDeAdivinhacaoConsoleApp1
+﻿namespace JogoDeAdivinhacaoConsoleApp1
 {
     internal class Program
     {
-        //Versão1: Estrutura básica e entrada do usuário
+        //Versão 2: Gerar um número secreto aleatório
         static void Main(string[] args)
         {
             Console.WriteLine("--------------------------------------");
@@ -11,10 +10,15 @@ namespace JogoDeAdivinhacaoConsoleApp1
             Console.WriteLine("--------------------------------------");
 
             //Logica do jogo
-            Console.Write("Digite um número para chutar: ");
+            Random geradorDeNumeros = new Random();
+
+            int numeroSecreto = geradorDeNumeros.Next(1, 21);
+
+            Console.Write("Digite um número (de 1 a 20) para chutar: ");
             int numeroDigitado = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Você digitou o nemero: " + numeroDigitado);
+            Console.WriteLine("O número secreto é: " + numeroSecreto);
 
             Console.ReadLine();
         }
